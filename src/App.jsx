@@ -21,7 +21,7 @@ function App() {
   const [stateFilter, setStateFilter] = useState([]);
 
   const addGastos = (gasto) => {
-    setGastos([...gastos, gasto]);
+    setGastos([gasto, ...gastos]);
   };
   const deleteGasto = (id) => {
     const updateBills = gastos.filter(bill => bill.id != id);
@@ -58,6 +58,7 @@ function App() {
         isValidBudget={isValidBudget}
         setIsValidBudget={setIsValidBudget}
         gastos={gastos}
+        setGastos={setGastos}
       />
       {isValidBudget && (
         <>

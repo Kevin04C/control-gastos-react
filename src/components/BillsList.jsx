@@ -17,7 +17,9 @@ export const BillsList = ({
       {filter ? (
         <>
           <h2>
-            {stateFilter.length > 0 ? `Gastos filtrados` : "No hay gastos en esta categoría"}
+            {stateFilter.length > 0
+              ? `Gastos filtrados`
+              : "No hay gastos en esta categoría"}
           </h2>
           {stateFilter.map((gasto) => (
             <Bill
@@ -30,7 +32,11 @@ export const BillsList = ({
         </>
       ) : (
         <>
-          {gastos.length > 0 ? "Gastos" : "Agregue gastos"}
+          <h2>
+            {gastos.length > 0
+              ? `Todos los gastos agregados`
+              : "No hay gastos, agregue uno"}
+          </h2>
           {gastos.map((gasto) => (
             <Bill
               key={gasto.id}

@@ -8,6 +8,7 @@ export const Header = ({
   setBudget,
   isValidBudget,
   setIsValidBudget,
+  setGastos
 }) => {
   useEffect(() => {
     localStorage.setItem("budget", JSON.stringify(budget));
@@ -18,7 +19,13 @@ export const Header = ({
       <h1>Planificador de gastos</h1>
 
       {isValidBudget ? (
-        <BudgetControl budget={budget} gastos={gastos}/>
+        <BudgetControl 
+          budget={budget} 
+          gastos={gastos} 
+          setIsValidBudget={setIsValidBudget}
+          setGastos={setGastos}
+          setBudget={setBudget}
+        />
       ) : (
         <NewBudget
           budget={budget}
